@@ -7,7 +7,7 @@ import { Tarea } from '../models/tarea';
   providedIn: 'root',
 })
 export class TareasService {
-  url = 'http://localhost:4000/api/tareas/';
+  url = 'https://todolist-rg7.herokuapp.com/api/tareas/';
   constructor(private http: HttpClient) {}
 
   getTareas(): Observable<any> {

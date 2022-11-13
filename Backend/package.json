@@ -4,8 +4,9 @@
   "description": "MEAN todoList ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ."
+    "start": "node index.js",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "MEAN",
