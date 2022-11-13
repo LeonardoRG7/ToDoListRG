@@ -7,7 +7,7 @@ import { Tarea } from '../models/tarea';
   providedIn: 'root',
 })
 export class TareasService {
-  url = 'https://localhost:4000/api/tareas/';
+  url = 'http://localhost:4000/api/tareas/';
   constructor(private http: HttpClient) {}
 
   getTareas(): Observable<any> {
