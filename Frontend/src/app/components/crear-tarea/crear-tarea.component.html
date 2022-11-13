@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo fs-2">{{nombreTitulo}}</span>
+          <form class="mt-4" [formGroup]="tareaForm" (ngSubmit)="agregarTarea()">
+            <div class="mb-3">
+              <input type="text" formControlName="titulo" class="form-control form-control-lg " placeholder="Ingrese titulo" >
+              <!-- con ngIf valida si el input contiene texto, y si no devolvemos la cadena de texto requerida -->
+              <div class="text-danger text-start mx-1" *ngIf="tareaForm.get('titulo')?.hasError('required') && tareaForm.get('titulo')?.touched">
+                <span>El titulo de la tarea <strong>Es obligatorio!</strong> </span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="name"  formControlName="autor" class="form-control form-control-lg " placeholder="Ingrese autor" >
+              <div class="text-danger text-start mx-1" *ngIf="tareaForm.get('autor')?.hasError('required') && tareaForm.get('autor')?.touched">
+                <span>El autor de la tarea <strong>Es obligatorio!</strong> </span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <textarea type="text"  formControlName="descripcion" class="form-control form-control-lg " placeholder="Ingrese descripcion" ></textarea>
+              <div class="text-danger text-start mx-1" *ngIf=" tareaForm.get('descripcion')?.hasError('required') &&  tareaForm.get('descripcion')?.touched">
+                <span>La descripcion de la tarea <strong>Es obligatorio!</strong> </span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>
+              <!-- desabilitaremos el boton siempre y cuando los campos del formulario no tengan contenido-->
+              <button type="submit" [disabled]="tareaForm.invalid" class="btn btnTarea btn-lg float-end">Aceptar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/leonardo-riascos-20b466200/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/LeonardoRG7" title="GitHub"  target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://leonardoriascosportafolio.netlify.app/" title="Portafolio" target="_blank"><i class="fa-solid fa-link"></i></a>
+    </div>
+    <p class="footer-copy" data-section="footer" data-value="copy">
+      © RiascosDEV.me All right reserved <br>
+      Made with ❤️ in Colombia
+    </p>
+  </div>
+</footer>

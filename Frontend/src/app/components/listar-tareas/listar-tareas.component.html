@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="Header"><img src="/assets/img/icon.png" alt="Logo Header"><h1>Lista de tareas</h1></div>
+  <div class="sendTarea">
+    <button class="btn btnWork" routerLink="/crear-tarea">
+      <i class="fa-solid fa-plus iconBtn"></i>
+    </button>
+  </div>
+  <div class="row gap-lg-2 gap-md-5 flex-wrap justify-content-center tareasList" *ngIf="listTareas.length>0">
+    <div class="col-lg-3 col-md-5 mb-3 mb-md-0" *ngFor="let tarea of listTareas" >
+      <div class="card contenido" >
+        <div class="card-body">
+          <h5 class="card-title">{{tarea.titulo}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{tarea.autor}}</h6>
+          <p class="card-text">{{tarea.descripcion}}</p>
+          <i class="fa-solid fa-trash text-danger" (click)="eliminarTarea(tarea._id)"></i>
+          <i class="fa-regular fa-pen-to-square text-primary float-end" [routerLink]="['/editar-tarea', tarea._id]"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tareaVacia">
+    <h5 *ngIf="listTareas.length === 0">No hay tareas para mostrar</h5>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/leonardo-riascos-20b466200/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/LeonardoRG7" title="GitHub"  target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://leonardoriascosportafolio.netlify.app/" title="Portafolio" target="_blank"><i class="fa-solid fa-link"></i></a>
+    </div>
+    <p class="footer-copy" data-section="footer" data-value="copy">
+      © RiascosDEV.me All right reserved <br>
+      Made with ❤️ in Colombia
+    </p>
+  </div>
+</footer>
